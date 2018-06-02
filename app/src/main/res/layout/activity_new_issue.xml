@@ -14,7 +14,7 @@
         android:layout_marginLeft="10dp"
         android:maxLines="3"
         android:hint="Description"
-        android:background="@android:color/transparents"
+        android:background="@android:color/transparent"
         />
 
 
