@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Issuemap.iml" filepath="$PROJECT_DIR$/Issuemap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IssueMapAndroidApp.iml" filepath="$PROJECT_DIR$/IssueMapAndroidApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

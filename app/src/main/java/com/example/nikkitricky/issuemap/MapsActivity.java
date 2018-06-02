@@ -8,7 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -29,11 +31,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private LocationManager lm;
     Double lon, lat;
-    static final int req_code = 1;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageView img ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         img = (ImageView)findViewById(R.id.imageView);
@@ -59,7 +63,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -67,12 +72,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 10);
+            }
+
             return;
         }
+
         Location location = lm.getLastKnownLocation(lm.NETWORK_PROVIDER);
         onLocationChanged(location);
 
         LatLng cur_place = new LatLng(lat, lon);
+
         mMap.addMarker(new MarkerOptions().position(cur_place).title("Your Here"));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(cur_place,13.0f));
     }
@@ -88,22 +105,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void newissue(View v){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //File file = getFile();
-        //intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-        startActivityForResult(intent,req_code);
-        Intent in = new Intent(this,NewIssue.class);
-        startActivity(intent);
+        File file = getFile();
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         String path = "sdcard/issuemap/issue_image.jpg";
-        img.setImageDrawable(Drawable.createFromPath(path));
+        img = (ImageView)findViewById(R.id.imageView);
+
+        Intent in = new Intent(this, NewIssue.class);
+        startActivity(in);
     }
 
     @Override
     public void onLocationChanged(Location location) {
-         lat = location.getLatitude();
+        lat = location.getLatitude();
         lon = location.getLongitude();
     }
 
