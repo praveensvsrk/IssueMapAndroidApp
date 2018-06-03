@@ -81,7 +81,7 @@ public class NewIssue extends Activity {
 
         Bitmap bitmap = BitmapFactory.decodeFile("sdcard/issuemap/issue_image.jpg");
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 25, baos);
         byte[] imageBytes = baos.toByteArray();
         final String imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
@@ -114,7 +114,7 @@ public class NewIssue extends Activity {
                     Uri imageUri = Uri.fromFile(new File("sdcard/issuemap/issue_image.jpg"));
 
                     TweetComposer.Builder builder = new TweetComposer.Builder(NewIssue.this)
-                            .text("just setting up my Twitter Kit.")
+                            .text(description.getText() + "tag")
                             .image(imageUri);
                     builder.show();
                     Toast.makeText(NewIssue.this, "Tweet posted", Toast.LENGTH_LONG).show();
