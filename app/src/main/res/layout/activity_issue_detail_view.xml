@@ -14,27 +14,28 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp"
+        android:background="@drawable/frame"
         app:srcCompat="@drawable/common_full_open_on_phone" />
 
     <TextView
         android:id="@+id/det_severe_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/det_desc_label"
-        android:layout_marginBottom="173dp"
         android:text="Severity"
-        android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+        android:layout_below="@+id/det_dept2"
+        android:layout_alignStart="@+id/det_dept_label2"
+        android:layout_marginTop="13dp" />
 
     <TextView
         android:id="@+id/det_dept_label2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/det_severe_label"
-        android:layout_marginBottom="225dp"
         android:text="Department"
-        android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+        android:layout_below="@+id/det_desc2"
+        android:layout_alignStart="@+id/det_desc2"
+        android:layout_marginTop="14dp" />
 
     <TextView
         android:id="@+id/det_desc_label"
@@ -49,16 +50,20 @@
     <TextView
         android:id="@+id/det_desc2"
         android:layout_width="314dp"
-        android:layout_height="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:text="Description" />
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/desc"
+        android:text="Description"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/det_desc_label"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/det_severe"
         android:layout_width="207dp"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/desc"
         android:layout_alignBottom="@+id/det_severe_label"
         android:layout_alignEnd="@+id/det_desc2"
         android:text="Severity" />
@@ -66,10 +71,13 @@
     <TextView
         android:id="@+id/det_dept2"
         android:layout_width="209dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/det_dept_label2"
-        android:layout_alignEnd="@+id/det_desc2"
-        android:text="Department" />
+        android:layout_height="25dp"
+
+        android:paddingLeft="10dp"
+        android:background="@drawable/desc"
+        android:text="Department"
+        android:layout_alignTop="@+id/det_dept_label2"
+        android:layout_alignStart="@+id/det_severe" />
 
 
 
@@ -102,7 +110,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="52dp"
                 android:layout_toStartOf="@+id/det_severe"
-                android:text="TextView" />
+                android:text="Please Look forward on this issue." />
 
             <TextView
                 android:id="@+id/textView8"
@@ -111,7 +119,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="52dp"
                 android:layout_toStartOf="@+id/det_severe"
-                android:text="TextView" />
+                android:text="Seems like this issue is solved on 20th May" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -120,7 +128,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="52dp"
                 android:layout_toStartOf="@+id/det_severe"
-                android:text="TextView" />
+                android:text="Okay thanks for the update sir." />
         </LinearLayout>
     </ScrollView>
 

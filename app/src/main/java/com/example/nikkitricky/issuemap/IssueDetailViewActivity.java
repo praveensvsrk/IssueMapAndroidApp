@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.util.Map;
 
 public class IssueDetailViewActivity extends AppCompatActivity {
 
@@ -31,11 +32,17 @@ public class IssueDetailViewActivity extends AppCompatActivity {
     TextView department;
     TextView severity;
     ImageView img;
+    Map<Integer, String> deptmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issue_detail_view);
+
+        deptmap.put(1, "Fire");
+        deptmap.put(2, "Sewage");
+        deptmap.put(3, "Power");
+        deptmap.put(4, "Police");
 
         description = (TextView) findViewById(R.id.det_desc2);
         department = (TextView) findViewById(R.id.det_dept2);
@@ -58,7 +65,7 @@ public class IssueDetailViewActivity extends AppCompatActivity {
                 Log.d("HIII", "YES");
                 try {
                     description.setText(obj.getString("description"));
-                    department.setText(obj.getString("department"));
+                    department.setText(deptmap.get(obj.getInt("department")));
                     severity.setText(obj.getDouble("severity") + "");
                     progressBar.setVisibility(View.INVISIBLE);
                     new DownloadImageTask(img).execute(mediaHost + obj.getString("image"));

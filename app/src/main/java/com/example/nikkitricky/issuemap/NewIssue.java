@@ -97,7 +97,7 @@ public class NewIssue extends Activity {
                      + ",\"severity\": " + severity.getProgress() + ", " +
                     "\"creation_date\": \"2018-06-02\",\"username\": 1,\"image\": \"" +
                     imageString +
-                    "\"}");
+                    "\", \"status\": 1}");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -117,7 +117,7 @@ public class NewIssue extends Activity {
                     Uri imageUri = Uri.fromFile(new File("sdcard/issuemap/issue_image.jpg"));
 
                     TweetComposer.Builder builder = new TweetComposer.Builder(NewIssue.this)
-                            .text(description.getText() + "#MyCity")
+                            .text(description.getText() + " @Hive35724036 \n #Hive #Angelhack")
                             .image(imageUri);
                     builder.show();
                     Toast.makeText(NewIssue.this, "Tweet posted", Toast.LENGTH_LONG).show();

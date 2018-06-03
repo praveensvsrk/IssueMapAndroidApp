@@ -15,64 +15,81 @@
         android:layout_marginTop="32dp"
         android:layout_marginLeft="10dp"
         android:maxLines="3"
+        android:paddingLeft="10dp"
         android:hint="Describe the Issue"
-        android:background="@android:color/transparent"
-        />
+        android:background="@drawable/desc"
+        android:layout_alignEnd="@+id/department" />
 
 
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:src="@drawable/frame"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignEnd="@+id/imageView"
+        android:id="@+id/imageView4" />
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="156dp"
         android:layout_height="152dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
         app:srcCompat="@drawable/common_full_open_on_phone"
-        android:layout_marginStart="39dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="76dp"/>
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginStart="21dp" />
 
     <Spinner
         android:id="@+id/department"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:entries="@array/Departments"
         android:prompt="@string/prompt"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/description" />
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignEnd="@+id/submit" />
 
     <SeekBar
         android:id="@+id/severity"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true" />
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignStart="@+id/department" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:textColor="@color/white"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="100dp"
         android:layout_marginEnd="30dp"
+        android:background="@drawable/submit"
         android:onClick="onClick"
-        android:text="Submit" />
+        android:text="Submit"
+        android:layout_toEndOf="@+id/progressBar" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/severity"
-        android:layout_alignStart="@+id/department"
-        android:layout_marginBottom="26dp"
-        android:text="Severity" />
+        android:text="Severity"
+        android:layout_below="@+id/department"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="31dp"
+        android:layout_alignEnd="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose Department"
-        android:layout_marginTop="32dp"
+        android:text="Department"
+        android:layout_marginTop="39dp"
         android:layout_below="@+id/description"
         android:layout_alignStart="@+id/description" />
 
@@ -85,13 +102,19 @@
 
     <Switch
         android:id="@+id/tweet"
-        android:layout_width="114dp"
+        android:layout_width="50dp"
+
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="179dp"
-        android:layout_marginEnd="16dp"
-        android:text="Tweet" />
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/severity" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/twitter"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/tweet"
+        android:id="@+id/imageView3" />
 
 
 </RelativeLayout>
