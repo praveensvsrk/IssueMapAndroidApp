@@ -15,7 +15,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -205,8 +204,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onCameraMoveStarted(int reason) {
                 if (reason ==REASON_GESTURE) {
-                    Toast.makeText(MapsActivity.this, "The user gestured on the map.",
-                            Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MapsActivity.this, "The user gestured on the map.",
+                      //      Toast.LENGTH_SHORT).show();
 
                     LatLngBounds curScreen = mMap.getProjection().getVisibleRegion().latLngBounds;
                     offset = (curScreen.getCenter().latitude - curScreen.northeast.latitude);
@@ -219,8 +218,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //                    Toast.makeText(MapsActivity.this, "The user tapped something on the map.",
 //                            Toast.LENGTH_SHORT).show();
                 } else if (reason ==REASON_DEVELOPER_ANIMATION) {
-                    Toast.makeText(MapsActivity.this, "The app moved the camera.",
-                            Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(MapsActivity.this, "The app moved the camera.",
+                    //        Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -242,18 +241,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Integer issueId = (Integer) marker.getTag();
 
         if (issueId != null && issueId != 1) {
-            Toast.makeText(this,
-                    marker.getTitle() + " clicked, id: " + issueId,
-                    Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this,
+            //        marker.getTitle() + " clicked, id: " + issueId,
+              //      Toast.LENGTH_SHORT).show();
             viewIssueDetail(issueId);
         } else if(issueId == 1){
-            Toast.makeText(this," current loc", Toast.LENGTH_SHORT).show();
+          //
+            // Toast.makeText(this," current loc", Toast.LENGTH_SHORT).show();
         }
 
 
         return false;
     }
 
+    public void home(View v){
+
+    }
+    public void profile(View v){
+
+    }
     @Override
     public void onMarkerDrag(Marker marker) {
 

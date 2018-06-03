@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Issuemap</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps">Hive</string>
     <string name="prompt">Choose a Department</string>
     <string-array name="Departments">
         <item>Fire</item>

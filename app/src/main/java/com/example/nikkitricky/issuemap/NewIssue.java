@@ -120,7 +120,7 @@ public class NewIssue extends Activity {
                             .text(description.getText() + " @Hive35724036 \n #Hive #Angelhack")
                             .image(imageUri);
                     builder.show();
-                    Toast.makeText(NewIssue.this, "Tweet posted", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(NewIssue.this, "Tweet posted", Toast.LENGTH_LONG).show();
                     NewIssue.this.finish();
                 }
 

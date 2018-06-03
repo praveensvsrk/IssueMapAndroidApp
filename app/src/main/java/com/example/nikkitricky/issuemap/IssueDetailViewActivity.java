@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 public class IssueDetailViewActivity extends AppCompatActivity {
@@ -39,6 +40,7 @@ public class IssueDetailViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issue_detail_view);
 
+        deptmap = new HashMap<>();
         deptmap.put(1, "Fire");
         deptmap.put(2, "Sewage");
         deptmap.put(3, "Power");
