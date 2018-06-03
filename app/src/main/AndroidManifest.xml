@@ -9,8 +9,9 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver
+            android:name=".TweetResultReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE"/>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.TWEET_COMPOSE_CANCEL"/>
+            </intent-filter>
+        </receiver>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -30,7 +41,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBroOO-Bv98okjqgTv_JL-sWF2MsDWrANE" />
+            android:value="AIzaSyCis1M1LYaOmuDEn3Ec5LKxd9tAHpgH41Q" />
 
         <activity
             android:name=".MapsActivity"
@@ -41,7 +52,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewIssue"></activity>
+        <activity android:name=".NewIssue" />
+        <activity android:name=".IssueDetailViewActivity"></activity>
     </application>
+
+
 
 </manifest>

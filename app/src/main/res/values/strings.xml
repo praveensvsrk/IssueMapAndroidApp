@@ -8,4 +8,6 @@
         <item>Sewage</item>
         <item>Ambulance</item>
     </string-array>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">uOPVG6ll29LeLf0p2iURVTcF8</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">bAqp8vjzVnVpVuHHrqXQdCdB2EGjJA3qg5PgO4h7vYhRaZVYy6</string>
 </resources>

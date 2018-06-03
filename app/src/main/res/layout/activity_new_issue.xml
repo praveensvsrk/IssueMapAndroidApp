@@ -6,14 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.nikkitricky.issuemap.NewIssue">
 
+
+
     <EditText
         android:id="@+id/description"
-        android:layout_height="150dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
-        android:padding="10dp"
+        android:layout_marginTop="32dp"
         android:layout_marginLeft="10dp"
         android:maxLines="3"
-        android:hint="Description"
+        android:hint="Describe the Issue"
         android:background="@android:color/transparent"
         />
 
@@ -26,42 +28,42 @@
         android:layout_marginStart="39dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="76dp" />
+        android:layout_marginBottom="76dp"/>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/department"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/Departments"
         android:prompt="@string/prompt"
         android:layout_marginTop="29dp"
-        android:layout_below="@+id/description"
+        android:layout_below="@+id/textView2"
         android:layout_alignStart="@+id/description" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/severity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:layout_below="@+id/spinner"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="32dp"
-        android:text="Button" />
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="onClick"
+        android:text="Submit" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/seekBar"
-        android:layout_alignStart="@+id/spinner"
+        android:layout_alignBottom="@+id/severity"
+        android:layout_alignStart="@+id/department"
         android:layout_marginBottom="26dp"
         android:text="Severity" />
 
@@ -70,7 +72,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Choose Department"
+        android:layout_marginTop="32dp"
         android:layout_below="@+id/description"
         android:layout_alignStart="@+id/description" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <Switch
+        android:id="@+id/tweet"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="179dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tweet" />
+
 
 </RelativeLayout>
