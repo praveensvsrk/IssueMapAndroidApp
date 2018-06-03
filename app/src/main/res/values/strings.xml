@@ -4,9 +4,9 @@
     <string name="prompt">Choose a Department</string>
     <string-array name="Departments">
         <item>Fire</item>
-        <item>Police</item>
         <item>Sewage</item>
-        <item>Ambulance</item>
+        <item>Power</item>
+        <item>Police</item>
     </string-array>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">uOPVG6ll29LeLf0p2iURVTcF8</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">bAqp8vjzVnVpVuHHrqXQdCdB2EGjJA3qg5PgO4h7vYhRaZVYy6</string>

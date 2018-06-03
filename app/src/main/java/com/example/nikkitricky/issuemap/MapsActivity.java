@@ -52,7 +52,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Set<Integer> newIssues = new HashSet<>();
     Marker curMarker;
 
-    String url = "http://80ae51a6.ngrok.io/issue/issuelist/";
+    String url = "http://153eaebe.ngrok.io/issue/issuelist/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,8 +3,8 @@ package com.example.nikkitricky.issuemap;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,14 +20,13 @@ import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.InputStream;
 
 public class IssueDetailViewActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
-    String mediaHost = "http://80ae51a6.ngrok.io/media/";
+    String mediaHost = "http://153eaebe.ngrok.io/media/";
     TextView description;
     TextView department;
     TextView severity;
@@ -45,7 +44,7 @@ public class IssueDetailViewActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar)findViewById(R.id.progressBarDetail);
 
-        String url = "http://80ae51a6.ngrok.io/issue/issuelist/";
+        String url = "http://153eaebe.ngrok.io/issue/issuelist/";
 
         int issueId;
         Bundle extras = getIntent().getExtras();
